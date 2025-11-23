@@ -1,9 +1,11 @@
 fastapi
 uvicorn
 streamlit
+nest_asyncio
 coloredlogs
 pydantic
 langchain
+langchain_experimental
 ipython
 requests
 openai
