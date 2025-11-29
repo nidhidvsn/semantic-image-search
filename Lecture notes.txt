@@ -31,6 +31,8 @@ embedder = OpenCLIPEmbeddings(
     device="cpu"
 )
 
+Types of embeddings like hnsw etc.
+
 Azure AI foundry, Google vertex, etc. Hugging face to find open source embedding models.
 NOTE: Google has really good image-based enmbedding models.
 Source: Sunny's Advanced RAG playlist using Google's vertex model: Chat with multiple docs yt video
@@ -67,5 +69,7 @@ In LLM era, Gemini Pro3, GPT 5 and 5.1, Sonnet 4.5
 		  
 		Image will be converted to embedding in common vectorspace.
 		
-	
+6. LLM: Use below website to find the best model for your purpose(in general)
+
+https://huggingface.co/spaces/mteb/leaderboard	
 
