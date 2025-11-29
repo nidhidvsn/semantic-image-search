@@ -6,6 +6,7 @@ coloredlogs
 pydantic
 langchain
 langchain_experimental
+langchain-qdrant
 ipython
 requests
 openai

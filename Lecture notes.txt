@@ -1,0 +1,71 @@
+
+RAG comes under CONVERSATIONAL AI(Eg: Ecomm bot Project 2) branch of GenAI.
+
+
+Three components of RAG: 
+1. PARSING
+2. RETRIEVAL
+3. GENERATION
+
+
+PART 1 : DATA INGESTION/PARSING OF RAG:
+
+TEXT ---> CHUNKING [Chunking techniques : customized techniques are IMP] --> EMBEDDING[Which technique to use, dimensions of embedding & which one to select, learn about transformers and how they produce embeddings] --> VECTOR DATABASE [learn about indexing techniques/ mechanism IMP ; read from FAISS documentation(excellent) ]
+
+PART 2: 				---->RESULT (aka CONTEXT/ RANKED DATA/ RETRIEVED DATA) + INSTRUCTIONS-----> LLM ----> RESPONSE.
+
+
+In this project, 
+a. IMAGE instead of text (standalone doc/ part of a document (docx, ppt, pdf))
+
+Use libraries like LlamaParser, Docling etc.
+
+b. WE SHOULD NOT PERFORM CHUNKING OF IMAGE Data. Rather,we do IMAGE DE-NOISING/IMAGE PRE-PROCESSING : Blur image, colour correction, cropping.
+
+c. EMBEDDING: 
+ Vision Transformer (ViT) Architecture
+
+embedder = OpenCLIPEmbeddings(
+    model_name="ViT-B-32",
+    checkpoint="laion2b_s34b_b79k", 
+    device="cpu"
+)
+
+Azure AI foundry, Google vertex, etc. Hugging face to find open source embedding models.
+NOTE: Google has really good image-based enmbedding models.
+Source: Sunny's Advanced RAG playlist using Google's vertex model: Chat with multiple docs yt video
+https://www.youtube.com/watch?si=DzGOeeg6eRrg22l&v=WWorF-UMCKw&feature=youtu.be
+
+4. VDB:
+MASTER AWS open search + Azure Open search. Also learn Pinecone, Quadrant, weaviate, .
+
+We'll use Quadrant in this project.
+
+
+5. RETRIEVAL: Two ways possible.
+Text(i/p) to image(o/p) [search] retrieval
+image(i/p) to image(i/p) [search] retrieval
+
+IMAGE RAG PIPELINE : 
+1. IMAGE (standalone pic/ part of any document) --> 
+2. PRE-PROCESSING OF IMAGES(optional; only in case of noisy images) --> 
+3. IMAGE EMBEDDING [(VIT) CLIP MODEL : can embed both text and image data]--> 
+4. STORE IN VDB (QDRANT - cloud variant) 
+5. --> RETRIEVAL PIPELINE (1] TEXT-BASED SEARCH 2] IMAGE BASED SEARCH) --> 
+6. LLM-BASED GENERATION
+
+
+
+Consider a .docx having image in it.
+
+1. Why we are using this image? To fetch info/data from the image.
+2. In CNN era, we used OCR technique to fetch data from image. [pyTessereect, easyOCR libraries]
+In transformers era, Donought,LayoutVM models(VIT architecture : CNN + transformers) were used for reading data from images.
+In LLM era, Gemini Pro3, GPT 5 and 5.1, Sonnet 4.5
+
+          Image(i/p) + text ----> LLM (interpreting the image's data) -----> O/P
+		  
+		Image will be converted to embedding in common vectorspace.
+		
+	
+
