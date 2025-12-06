@@ -53,7 +53,7 @@ IMAGE RAG PIPELINE :
 2. PRE-PROCESSING OF IMAGES(optional; only in case of noisy images) --> 
 3. IMAGE EMBEDDING [(VIT) CLIP MODEL : can embed both text and image data]--> 
 4. STORE IN VDB (QDRANT - cloud variant) 
-5. --> RETRIEVAL PIPELINE (1] TEXT-BASED SEARCH 2] IMAGE BASED SEARCH) --> 
+5. --> RETRIEVAL PIPELINE (1. TEXT-BASED SEARCH 2. IMAGE BASED SEARCH) --> 
 6. LLM-BASED GENERATION
 
 
@@ -72,4 +72,6 @@ In LLM era, Gemini Pro3, GPT 5 and 5.1, Sonnet 4.5
 6. LLM: Use below website to find the best model for your purpose(in general)
 
 https://huggingface.co/spaces/mteb/leaderboard	
+
+
 
